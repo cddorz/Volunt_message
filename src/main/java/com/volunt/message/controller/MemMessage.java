@@ -2,7 +2,8 @@ package com.volunt.message.controller;
 
 import com.volunt.message.service.MemberMessage;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import com.volunt.message.tools.UniversalResponseBody;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -15,6 +16,8 @@ public class MemMessage {
 
     @Resource
     MemberMessage memberMessage;
+    @Resource
+    UniversalResponseBody universalResponseBody;
 
 
     @PostMapping("/InsertMessage")
