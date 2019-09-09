@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class Member {
 
-    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Birthday;
 
