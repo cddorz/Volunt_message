@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.volunt.message.dao.GetMess" >
+    <resultMap id="MemberMessage" type="com.volunt.message.model.Member">
+        <id column="main_id" property="main_id" jdbcType="INTEGER"/>
+        <result column="HomeAddress" property="homeAddress" jdbcType="VARCHAR"/>
+        <result column="College" property="college" jdbcType="VARCHAR"/>
+        <result column="Profession" property="profession" jdbcType="VARCHAR"/>
+        <result column="Birthday" property="birthday" jdbcType="DATE"/>
+        <result column="Dormitory" property="dormitory" jdbcType="VARCHAR"/>
+        <result column="Name" property="name" jdbcType="VARCHAR"/>
+        <result column="departid" property="departid" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="GetMembers1">
+        WHERE departid = #{deparid,jdbcType=INRTEGER}
+    </sql>
+    <select id=""
+    
+</mapper>

@@ -16,9 +16,9 @@ public class MemberMessage {
     InsertMember insertMember;
 
 
-    public UniversalResponseBody InsertMemberMess(String homeAddress, String college, String profession, Date birthday, String dormitory, Integer main_id,String name){
+    public UniversalResponseBody InsertMemberMess(String homeAddress, String college, String profession, Date birthday, String dormitory, Integer main_id,String name,Integer departid){
         try{
-            if (insertMember.InsertMember(homeAddress, college, profession, birthday, dormitory, main_id,name) != 0) {
+            if (insertMember.InsertMember(homeAddress, college, profession, birthday, dormitory, main_id,name,departid) != 0) {
                 Map map =new HashMap();
                 map.put("homeAddress",homeAddress);
                 map.put("main_id",main_id);
@@ -27,6 +27,7 @@ public class MemberMessage {
                 map.put("birthday",birthday);
                 map.put("dormitory",dormitory);
                 map.put("name",name);
+                map.put("departid",departid);
                 return new UniversalResponseBody<>(201,"成功",map);
 
             } else {

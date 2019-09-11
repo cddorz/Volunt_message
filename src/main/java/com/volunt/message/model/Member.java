@@ -18,6 +18,15 @@ public class Member {
     private String Profession;//专业
     private String Dormitory;//宿舍住址 ;  丁香1-Ⅱ-329
     private Integer main_id;
+    private Integer departid;
+
+    public Integer getDepartid() {
+        return departid;
+    }
+
+    public void setDepartid(Integer departid) {
+        this.departid = departid;
+    }
 
     private String Name;//姓名
 
