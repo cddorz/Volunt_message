@@ -13,7 +13,7 @@ public class MemberMessage {
     InsertMember insertMember;
 
 
-    public int InsertMemberMess(String homeAddress, String college, String profession, Date birthday, String dormitory, Integer main_id){
-        return insertMember.InsertMember(homeAddress,college,profession,birthday,dormitory,main_id);
+    public int InsertMemberMess(String homeAddress, String college, String profession, Date birthday, String dormitory, Integer main_id,String name){
+        return insertMember.InsertMember(homeAddress,college,profession,birthday,dormitory,main_id,name);
     }
 }

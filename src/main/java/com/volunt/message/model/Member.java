@@ -19,6 +19,16 @@ public class Member {
     private String Dormitory;//宿舍住址 ;  丁香1-Ⅱ-329
     private Integer main_id;
 
+    private String Name;//姓名
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        this.Name = name;
+    }
+
     public Integer getMain_id() {
         return main_id;
     }

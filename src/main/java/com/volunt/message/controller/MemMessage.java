@@ -24,10 +24,10 @@ public class MemMessage {
 
 
     @PostMapping("/InsertMessage")
-    public UniversalResponseBody Insert(@RequestParam("homeAddress") String homeAddress, @RequestParam("main_id")Integer main_id, @RequestParam(value = "birthday",required = false)Date birthday, @RequestParam("college")String college, @RequestParam("profession")String profession, @RequestParam("dormitory")String dormitory) {
+    public UniversalResponseBody Insert(@RequestParam("homeAddress") String homeAddress, @RequestParam("main_id")Integer main_id, @RequestParam(value = "birthday",required = false)Date birthday, @RequestParam("college")String college, @RequestParam("profession")String profession, @RequestParam("dormitory")String dormitory,@RequestParam("name")String name) {
 
         try{
-            if (memberMessage.InsertMemberMess(homeAddress, college, profession, birthday, dormitory, main_id) != 0) {
+            if (memberMessage.InsertMemberMess(homeAddress, college, profession, birthday, dormitory, main_id,name) != 0) {
                 Map map =new HashMap();
                 map.put("homeAddress",homeAddress);
                 map.put("main_id",main_id);
@@ -35,6 +35,7 @@ public class MemMessage {
                 map.put("profession",profession);
                 map.put("birthday",birthday);
                 map.put("dormitory",dormitory);
+                map.put("name",name);
                 return new UniversalResponseBody<>(201,"成功",map);
 
             } else {
