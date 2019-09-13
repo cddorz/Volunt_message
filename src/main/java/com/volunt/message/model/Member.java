@@ -3,10 +3,14 @@ package com.volunt.message.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+@Data
+@ToString
 public class Member {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -20,69 +24,5 @@ public class Member {
     private Integer main_id;
     private Integer departid;
 
-    public Integer getDepartid() {
-        return departid;
-    }
 
-    public void setDepartid(Integer departid) {
-        this.departid = departid;
-    }
-
-    private String Name;//姓名
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        this.Name = name;
-    }
-
-    public Integer getMain_id() {
-        return main_id;
-    }
-
-    public void setMain_id(Integer main_id) {
-        this.main_id = main_id;
-    }
-
-    public String getCollege() {
-        return College;
-    }
-
-    public void setCollege(String college) {
-        College = college;
-    }
-
-    public String getHomeAddress() {
-        return HomeAddress;
-    }
-
-    public void setHomeAddress(String homeAddress) {
-        this.HomeAddress = homeAddress;
-    }
-
-    public String getProfession() {
-        return Profession;
-    }
-
-    public void setProfession(String profession) {
-        this.Profession = profession;
-    }
-
-    public String getDormitory() {
-        return Dormitory;
-    }
-
-    public void setDormitory(String dormitory) {
-        this.Dormitory = dormitory;
-    }
-
-    public Date getBirthday() {
-        return Birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.Birthday=birthday;
-    }
 }

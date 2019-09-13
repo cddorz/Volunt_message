@@ -1,10 +1,11 @@
 package com.volunt.message.controller;
 
-import com.volunt.message.service.GetMessage;
-import com.volunt.message.service.MemberMessage;
+import com.github.pagehelper.PageInfo;
+import com.volunt.message.service.impl.MemberServiceImpl;
 
 import com.volunt.message.tools.UniversalResponseBody;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,23 +13,25 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 
-
+@Slf4j
 @RestController
 public class MemMessage {
 
     @Resource
-    MemberMessage memberMessage;
-    GetMessage getMessage;
+    private MemberServiceImpl memberMessage;
 
 
     @PostMapping("/InsertMessage")
     public UniversalResponseBody Insert(@RequestParam("homeAddress") String homeAddress, @RequestParam("main_id")Integer main_id, @RequestParam(value = "birthday",required = false)Date birthday, @RequestParam("college")String college, @RequestParam("profession")String profession, @RequestParam("dormitory")String dormitory,@RequestParam("name")String name,@RequestParam("departid")Integer departid) {
-
-         return  memberMessage.InsertMemberMess(homeAddress, college, profession, birthday, dormitory, main_id, name,departid);
+        log.info(homeAddress);
+        return  memberMessage.InsertMemberMess(homeAddress, college, profession, birthday, dormitory, main_id, name,departid);
     }
 
-    @GetMapping("/Get/M embers")
-    public UniversalResponseBody GetMember(@RequestParam("departid")Integer departid){
-        return getMessage.getByDepartID(departid);
+    @GetMapping("/GetMembers")
+    public PageInfo GetMember(@RequestParam("departid") Integer departid, @RequestParam("pageNum")int pageNum, @RequestParam("pageSize")int pageSize){
+
+        log.info(departid+"");
+        return memberMessage.getByDepartID(departid,pageNum,pageSize);
+
     }
 }

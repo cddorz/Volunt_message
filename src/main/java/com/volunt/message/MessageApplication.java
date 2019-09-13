@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("com.volunt.message.dao")
 public class MessageApplication {
 
     public static void main(String[] args) {
