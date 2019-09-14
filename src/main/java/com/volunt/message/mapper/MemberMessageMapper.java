@@ -8,5 +8,5 @@ public interface MemberMessageMapper {
 
     int InsertMember(Member member);
 
-    Page<Member> SelectByDepartID(Integer departid);
+    Page<Member> SelectByDepartment(String department);
 }

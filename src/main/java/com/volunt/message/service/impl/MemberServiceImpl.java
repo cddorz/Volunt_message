@@ -24,7 +24,8 @@ public class MemberServiceImpl implements MemberService {
         try{
             if (memberMessageMapper.InsertMember(member)>0) {
 
-                return new UniversalResponseBody<>(0,"成功",member);
+//                return new UniversalResponseBody<>(0,"成功",member);
+                return new UniversalResponseBody<>(0,"success",member);
 
             } else {
                 return new UniversalResponseBody<>(-1,"失败",null);
@@ -37,10 +38,10 @@ public class MemberServiceImpl implements MemberService {
 
 
 
-    public PageInfo getByDepartID(Integer departid,int pageNum,int pageSize) {
+    public PageInfo getByDepartID(String department,int pageNum,int pageSize) {
 
         PageHelper.startPage(pageNum,pageSize);
-        PageInfo<Member> pageInfo = new PageInfo<>(memberMessageMapper.SelectByDepartID(departid));
+        PageInfo<Member> pageInfo = new PageInfo<>(memberMessageMapper.SelectByDepartment(department));
         return pageInfo;
     }
 }

@@ -9,5 +9,5 @@ import java.util.Date;
 public interface MemberService {
      UniversalResponseBody InsertMemberMess(Member member);
 
-        PageInfo<Member> getByDepartID(Integer departid, int pageNum, int pageSize);
+        PageInfo<Member> getByDepartID(String department, int pageNum, int pageSize);
 }

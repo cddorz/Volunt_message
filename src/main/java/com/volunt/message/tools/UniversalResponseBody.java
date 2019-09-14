@@ -4,30 +4,30 @@ package com.volunt.message.tools;
  * @param <T> 该变量是各种返回的data数据，如果没有返回的data数据就为null值
  */
 public class UniversalResponseBody<T> {
-    private int Code;
+    private int errCode;
 
     private String msg;
 
-    public int getCode() {
-        return Code;
+    public int getErrCode() {
+        return errCode;
     }
 
-    public void setCode(int Code) {
-        this.Code = Code;
+    public void setErrCode(int errCode) {
+        this.errCode = errCode;
     }
 
     public String getMsg() {
         return msg;
     }
 
-    public UniversalResponseBody(int Code, String msg, T data) {
-        this.Code = Code;
+    public UniversalResponseBody(int errCode, String msg, T data) {
+        this.errCode = errCode;
         this.msg = msg;
         this.data = data;
     }
 
-    public UniversalResponseBody(int Code, String msg) {
-        this.Code = Code;
+    public UniversalResponseBody(int errCode, String msg) {
+        this.errCode = errCode;
         this.msg = msg;
     }
 

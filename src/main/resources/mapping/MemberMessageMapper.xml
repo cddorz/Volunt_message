@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.volunt.message.mapper.MemberMessageMapper">
+<resultMap id="MemberMessage" type="com.volunt.message.model.Member">
+    <id column="main_id" property="main_id" jdbcType="INTEGER"/>
+    <result column="home_address" property="homeAddress" jdbcType="VARCHAR"/>
+    <result column="college" property="college" jdbcType="VARCHAR"/>
+    <result column="profession" property="profession" jdbcType="VARCHAR"/>
+    <result column="birthday" property="birthday" jdbcType="DATE"/>
+    <result column="dormitory" property="dormitory" jdbcType="VARCHAR"/>
+    <result column="member_name" property="memberName" jdbcType="VARCHAR"/>
+    <result column="department" property="department" jdbcType="VARCHAR"/>
 
-    <select id="SelectByDepartID" parameterType="java.lang.Integer" resultType="com.volunt.message.model.Member">
-        SELECT * FROM membermessage WHERE departid = #{deparid,jdbcType=INTEGER}
+</resultMap>
+    <select id="SelectByDepartment" parameterType="java.lang.String" resultType="com.volunt.message.model.Member" resultMap="MemberMessage">
+        SELECT * FROM membermessage WHERE department = #{deparment,jdbcType=VARCHAR}
     </select>
     <insert id="InsertMember" parameterType="com.volunt.message.model.Member">
-        INSERT INTO membermessage (home_address, college, profession, birthday, dormitory,main_id,member_name,departid)
+        INSERT INTO membermessage (home_address, college, profession, birthday, dormitory,main_id,member_name,department)
         VALUES
-        (#{homeAddress,jdbcType=VARCHAR},#{college,jdbcType=VARCHAR},#{profession,jdbcType=VARCHAR},#{birthday,jdbcType=DATE},#{dormitory,jdbcType=VARCHAR},#{main_id,jdbcType=INTEGER},#{memberName,jdbcType=VARCHAR},#{departid,jdbcType=INTEGER})
+        (#{homeAddress,jdbcType=VARCHAR},#{college,jdbcType=VARCHAR},#{profession,jdbcType=VARCHAR},#{birthday,jdbcType=DATE},#{dormitory,jdbcType=VARCHAR},#{main_id,jdbcType=INTEGER},#{memberName,jdbcType=VARCHAR},#{department,jdbcType=VARCHAR})
     </insert>
 </mapper>

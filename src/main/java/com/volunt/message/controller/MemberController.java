@@ -30,8 +30,8 @@ public class MemberController {
     }
 
     @GetMapping("/GetMembers")
-    public PageInfo GetMember(@RequestParam("departid") Integer departid, @RequestParam("pageNum")int pageNum, @RequestParam("pageSize")int pageSize){
-        return memberMessage.getByDepartID(departid,pageNum,pageSize);
+    public PageInfo GetMember(@RequestParam("departid")String department, @RequestParam("pageNum")int pageNum, @RequestParam("pageSize")int pageSize){
+        return memberMessage.getByDepartID(department,pageNum,pageSize);
 
     }
 }
