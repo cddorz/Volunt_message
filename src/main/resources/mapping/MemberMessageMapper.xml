@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.volunt.message.mapper.MemberMessageMapper">
+
+    <select id="SelectByDepartID" parameterType="java.lang.Integer" resultType="com.volunt.message.model.Member">
+        SELECT * FROM membermessage WHERE departid = #{deparid,jdbcType=INTEGER}
+    </select>
+    <insert id="InsertMember" parameterType="com.volunt.message.model.Member">
+        INSERT INTO membermessage (home_address, college, profession, birthday, dormitory,main_id,member_name,departid)
+        VALUES
+        (#{homeAddress,jdbcType=VARCHAR},#{college,jdbcType=VARCHAR},#{profession,jdbcType=VARCHAR},#{birthday,jdbcType=DATE},#{dormitory,jdbcType=VARCHAR},#{main_id,jdbcType=INTEGER},#{memberName,jdbcType=VARCHAR},#{departid,jdbcType=INTEGER})
+    </insert>
+</mapper>

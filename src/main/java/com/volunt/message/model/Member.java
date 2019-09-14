@@ -13,16 +13,16 @@ import java.util.Date;
 @ToString
 public class Member {
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date Birthday;
+    private Date birthday;
 
-    private String HomeAddress;
-    private String  College;//学院
-    private String Profession;//专业
-    private String Dormitory;//宿舍住址 ;  丁香1-Ⅱ-329
+    private String homeAddress;
+    private String  college;//学院
+    private String profession;//专业
+    private String dormitory;//宿舍住址 ;  丁香1-Ⅱ-329
     private Integer main_id;
     private Integer departid;
-
+    private String memberName;
 
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+@MapperScan("com.volunt.message.mapper")
 public class MessageApplication {
 
     public static void main(String[] args) {
