@@ -6,7 +6,7 @@
     <result column="home_address" property="homeAddress" jdbcType="VARCHAR"/>
     <result column="college" property="college" jdbcType="VARCHAR"/>
     <result column="profession" property="profession" jdbcType="VARCHAR"/>
-    <result column="birthday" property="birthday" jdbcType="DATE"/>
+    <result column="birthday" property="birthday" jdbcType="VARCHAR"/>
     <result column="dormitory" property="dormitory" jdbcType="VARCHAR"/>
     <result column="member_name" property="memberName" jdbcType="VARCHAR"/>
     <result column="department" property="department" jdbcType="VARCHAR"/>
@@ -18,6 +18,10 @@
     <insert id="InsertMember" parameterType="com.volunt.message.model.Member">
         INSERT INTO membermessage (home_address, college, profession, birthday, dormitory,main_id,member_name,department)
         VALUES
-        (#{homeAddress,jdbcType=VARCHAR},#{college,jdbcType=VARCHAR},#{profession,jdbcType=VARCHAR},#{birthday,jdbcType=DATE},#{dormitory,jdbcType=VARCHAR},#{main_id,jdbcType=INTEGER},#{memberName,jdbcType=VARCHAR},#{department,jdbcType=VARCHAR})
+        (#{homeAddress,jdbcType=VARCHAR},#{college,jdbcType=VARCHAR},#{profession,jdbcType=VARCHAR},#{birthday,jdbcType=VARCHAR},#{dormitory,jdbcType=VARCHAR},#{main_id,jdbcType=INTEGER},#{memberName,jdbcType=VARCHAR},#{department,jdbcType=VARCHAR})
     </insert>
+
+    <select id="SelectForExcel"  parameterType="java.lang.String" resultType="com.volunt.message.model.Member" resultMap="MemberMessage">
+        SELECT * FROM membermessage WHERE department = #{deparment,jdbcType=VARCHAR}
+    </select>
 </mapper>

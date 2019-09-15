@@ -10,6 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.SimpleFormatter;
 
 
 @Slf4j
@@ -43,5 +48,10 @@ public class MemberServiceImpl implements MemberService {
         PageHelper.startPage(pageNum,pageSize);
         PageInfo<Member> pageInfo = new PageInfo<>(memberMessageMapper.SelectByDepartment(department));
         return pageInfo;
+    }
+
+    public List<Member> getForExcel(String department){
+        List<Member> listMembers =  memberMessageMapper.SelectForExcel(department);
+        return listMembers;
     }
 }

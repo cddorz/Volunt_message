@@ -5,9 +5,12 @@ import com.volunt.message.model.Member;
 import com.volunt.message.tools.UniversalResponseBody;
 
 import java.util.Date;
+import java.util.List;
 
 public interface MemberService {
      UniversalResponseBody InsertMemberMess(Member member);
 
-        PageInfo<Member> getByDepartID(String department, int pageNum, int pageSize);
+     PageInfo<Member> getByDepartID(String department, int pageNum, int pageSize);
+
+     List<Member> getForExcel(String department);
 }
