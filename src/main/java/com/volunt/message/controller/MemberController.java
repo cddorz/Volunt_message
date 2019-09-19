@@ -41,15 +41,15 @@ public class MemberController {
 
     /**
      *
-     * @param department
+     * @param departmentCode
      * @param pageNum
      * @param pageSize
      * @return 分页返回部门所有人员
      */
     @GetMapping("/GetMembers")
-    public PageInfo GetMember(@RequestParam("departid")String department, @RequestParam("pageNum")int pageNum, @RequestParam("pageSize")int pageSize){
+    public PageInfo GetMember(@RequestParam("departCode")int departmentCode, @RequestParam("pageNum")int pageNum, @RequestParam("pageSize")int pageSize){
+        String department = DepartmentEnum.getDepartment(departmentCode);
         return memberMessageService.getByDepartID(department,pageNum,pageSize);
-
     }
 
     /**
