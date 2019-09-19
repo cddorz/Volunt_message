@@ -41,7 +41,7 @@ public class Member implements java.io.Serializable{
     private String dormitory;//宿舍住址 ;  丁香1-Ⅱ-329
 
     @Excel(name = "学号",orderNum = "7")
-    private String studentNum;
+    private String studentNum;//学号
 
 
     private String department;
