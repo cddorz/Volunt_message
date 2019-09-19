@@ -64,7 +64,7 @@ public class MemberController {
         String department = DepartmentEnum.getDepartment(departmentCode);
 
         List<Map<String,Object>> memberList = Object2Map.object2MapList(memberMessageService.getForExcel(department));
-        ExcelUtil.templateExportExcel("D:/JAVA/message/src/main/resources/ExcelTemp"+"/MemberMessageTemp.xls",memberList,department+"部员详细信息.xls",response);
+        ExcelUtil.templateExportExcel("/root/message"+"/MemberMessageTemp.xls",memberList,department+"部员详细信息.xls",response);
 
     }
 }

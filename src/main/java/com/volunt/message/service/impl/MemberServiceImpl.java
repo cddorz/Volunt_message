@@ -10,11 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.logging.SimpleFormatter;
+
 
 
 @Slf4j
@@ -28,10 +25,7 @@ public class MemberServiceImpl implements MemberService {
     public UniversalResponseBody InsertMemberMess(Member member){
         try{
             if (memberMessageMapper.InsertMember(member)>0) {
-
-//                return new UniversalResponseBody<>(0,"成功",member);
                 return new UniversalResponseBody<>(0,"success",member);
-
             } else {
                 return new UniversalResponseBody<>(-1,"失败",null);
             }
@@ -44,7 +38,6 @@ public class MemberServiceImpl implements MemberService {
 
 
     public PageInfo getByDepartID(String department,int pageNum,int pageSize) {
-
         PageHelper.startPage(pageNum,pageSize);
         PageInfo<Member> pageInfo = new PageInfo<>(memberMessageMapper.SelectByDepartment(department));
         return pageInfo;
