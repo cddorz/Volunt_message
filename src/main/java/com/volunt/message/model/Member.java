@@ -10,7 +10,6 @@ import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
-import java.util.Date;
 
 @Data
 @ToString
@@ -40,6 +39,9 @@ public class Member implements java.io.Serializable{
 
     @Excel(name = "宿舍",orderNum = "6")
     private String dormitory;//宿舍住址 ;  丁香1-Ⅱ-329
+
+    @Excel(name = "学号",orderNum = "7")
+    private String studentNum;
 
 
     private String department;
