@@ -67,4 +67,5 @@ public class MemberController {
         ExcelUtil.templateExportExcel("/root/message"+"/MemberMessageTemp.xls",memberList,department+"部员详细信息.xls",response);
 
     }
+
 }
