@@ -47,9 +47,10 @@ public class MemberController {
      * @return 分页返回部门所有人员
      */
     @GetMapping("/pc/get/members/messages")
-    public PageInfo GetMember(@RequestParam("departCode")int departmentCode, @RequestParam("pageNum")int pageNum, @RequestParam("pageSize")int pageSize){
+    public UniversalResponseBody GetMember(@RequestParam("departCode")int departmentCode, @RequestParam("pageNum")int pageNum, @RequestParam("pageSize")int pageSize){
         String department = DepartmentEnum.getDepartment(departmentCode);
-        return memberMessageService.getByDepartID(department,pageNum,pageSize);
+        return   memberMessageService.getByDepartID(department,pageNum,pageSize);
+
     }
 
     /**

@@ -21,7 +21,7 @@ public class MemberServiceImpl implements MemberService {
     @Resource
     private MemberMessageMapper memberMessageMapper;
 
-
+    @Override
     public UniversalResponseBody InsertMemberMess(Member member){
         try{
             if (memberMessageMapper.InsertMember(member)>0) {
@@ -36,13 +36,18 @@ public class MemberServiceImpl implements MemberService {
     }
 
 
-
-    public PageInfo getByDepartID(String department,int pageNum,int pageSize) {
+    @Override
+    public UniversalResponseBody getByDepartID(String department,int pageNum,int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
         PageInfo<Member> pageInfo = new PageInfo<>(memberMessageMapper.SelectByDepartment(department));
-        return pageInfo;
+        if (pageInfo.getTotal() != 0){
+            return new UniversalResponseBody(0,"success",pageInfo);
+        }else{
+            return new UniversalResponseBody<>(-1,"failed",null);
+        }
     }
 
+    @Override
     public List<Member> getForExcel(String department){
         List<Member> listMembers =  memberMessageMapper.SelectForExcel(department);
         return listMembers;
