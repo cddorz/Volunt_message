@@ -13,14 +13,15 @@
     <result column="student_num" property="studentNum" jdbcType="VARCHAR"/>
     <result column="sex" property="sex" jdbcType="VARCHAR"/>
     <result column="tel_num" property="telNum" jdbcType="VARCHAR"/>
+    <result column="qq" property="QQ" jdbcType="VARCHAR"/>
 </resultMap>
     <select id="SelectByDepartment" parameterType="java.lang.String" resultType="com.volunt.message.model.Member" resultMap="MemberMessage">
         SELECT * FROM membermessage WHERE department = #{deparment,jdbcType=VARCHAR}
     </select>
     <insert id="InsertMember" parameterType="com.volunt.message.model.Member">
-        INSERT INTO membermessage (home_address, college, profession, birthday, dormitory,main_id,member_name,department,student_num,sex,tel_num)
+        INSERT INTO membermessage (home_address, college, profession, birthday, dormitory,main_id,member_name,department,student_num,sex,tel_num,qq)
         VALUES
-        (#{homeAddress,jdbcType=VARCHAR},#{college,jdbcType=VARCHAR},#{profession,jdbcType=VARCHAR},#{birthday,jdbcType=VARCHAR},#{dormitory,jdbcType=VARCHAR},#{main_id,jdbcType=INTEGER},#{memberName,jdbcType=VARCHAR},#{department,jdbcType=VARCHAR},#{studentNum,jdbcType=VARCHAR},#{sex,jdbcType=VARCHAR},#{telNum,jdbcType=VARCHAR})
+        (#{homeAddress,jdbcType=VARCHAR},#{college,jdbcType=VARCHAR},#{profession,jdbcType=VARCHAR},#{birthday,jdbcType=VARCHAR},#{dormitory,jdbcType=VARCHAR},#{main_id,jdbcType=INTEGER},#{memberName,jdbcType=VARCHAR},#{department,jdbcType=VARCHAR},#{studentNum,jdbcType=VARCHAR},#{sex,jdbcType=VARCHAR},#{telNum,jdbcType=VARCHAR},#{QQ,jdbcType=VARCHAR})
     </insert>
 
     <select id="SelectForExcel"  parameterType="java.lang.String" resultType="com.volunt.message.model.Member" resultMap="MemberMessage">

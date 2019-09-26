@@ -29,25 +29,30 @@ public class Member implements java.io.Serializable{
     @Excel(name = "学号",orderNum = "3")
     private String studentNum;//学号
 
-    @Excel(name = "生日",orderNum = "4", databaseFormat = "yyyyMMdd", format = "yyyy-MM-dd")
+    @Excel(name = "QQ",orderNum = "4")
+    private String QQ;
+
+    @Excel(name = "生日",orderNum = "5", databaseFormat = "yyyyMMdd", format = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String birthday;
 
-    @Excel(name = "电话",orderNum = "5")
+    @Excel(name = "电话",orderNum = "6")
     private String telNum;
 
-    @Excel(name = "家庭住址",orderNum = "6")
+    @Excel(name = "家庭住址",orderNum = "7")
     private String homeAddress;
 
-    @Excel(name = "学院",orderNum = "7")
+    @Excel(name = "学院",orderNum = "8")
     private String  college;//学院
 
-    @Excel(name = "专业",orderNum = "8")
+    @Excel(name = "专业",orderNum = "9")
     private String profession;//专业
 
-    @Excel(name = "宿舍",orderNum = "9")
+    @Excel(name = "宿舍",orderNum = "10")
     private String dormitory;//宿舍住址 ;  丁香1-Ⅱ-329
+
+
 
     private String department;
 
